@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\xml\\provider_paths.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\xml\\preferences.xml"
+    }
+]

@@ -1,0 +1,40 @@
+{
+  "_from": "git+https://github.com/b-alidra/-cordova-imagePickerEx.git",
+  "_id": "com.synconset.imagepickerExt@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha1-5Er9+bgSwWxCwLTQeX11d1XMwxk=",
+  "_location": "/com.synconset.imagepickerExt",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/b-alidra/-cordova-imagePickerEx.git",
+    "rawSpec": "https://github.com/b-alidra/-cordova-imagePickerEx.git",
+    "saveSpec": "git+https://github.com/b-alidra/-cordova-imagePickerEx.git",
+    "fetchSpec": "https://github.com/b-alidra/-cordova-imagePickerEx.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/b-alidra/-cordova-imagePickerEx.git#74be2b8c67256e47057db8c188fe404ce3df95ad",
+  "_spec": "https://github.com/b-alidra/-cordova-imagePickerEx.git",
+  "_where": "D:\\$tudy\\ionic\\myApp\\WeChat",
+  "bundleDependencies": false,
+  "cordova_name": "ImagePicker",
+  "deprecated": false,
+  "description": "\n\t\tThis plugin allows selection of multiple images from the camera roll / gallery in a phonegap app\n\t",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "license": "MIT",
+  "name": "com.synconset.imagepickerExt",
+  "platforms": [
+    "ios",
+    "android"
+  ],
+  "version": "1.0.5"
+}

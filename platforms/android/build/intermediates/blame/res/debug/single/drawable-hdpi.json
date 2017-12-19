@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\image_bg.9.png",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\drawable-hdpi\\image_bg.9.png"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\loading_icon.png",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\drawable-hdpi\\loading_icon.png"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\launcher_icon.png",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\drawable-hdpi\\launcher_icon.png"
+    }
+]

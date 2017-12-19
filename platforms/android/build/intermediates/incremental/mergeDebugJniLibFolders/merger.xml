@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\$tudy\ionic\myApp\WeChat\platforms\android\libs"><file name="barcodescanner.aar" path="D:\$tudy\ionic\myApp\WeChat\platforms\android\libs\barcodescanner.aar"/></source></dataSet><dataSet config="debug"><source path="D:\$tudy\ionic\myApp\WeChat\platforms\android\src\debug\jniLibs"/></dataSet></merger>

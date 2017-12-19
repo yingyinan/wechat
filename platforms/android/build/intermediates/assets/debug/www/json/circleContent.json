@@ -1,0 +1,19 @@
+[{
+    "id": "1001",
+    "name": "kiki",
+    "lastText": "起床困难户",
+    "face": "img/timg.jpg",
+    "like":"true",
+    "circleImg":["img/miao.jpg","img/miao.jpg","img/miao.jpg"],        
+    "circleTime":"7分钟前",
+    "comment":[{"name":"应怡楠","content":"是我吗"},{"name":"kiki","content":"那不然是谁"}]
+},{
+    "id": "1002",
+    "name": "coco",
+    "lastText": "卡哇伊~",
+    "face": "img/miao.jpg",
+    "like":"true",
+    "circleImg":["img/timg.jpg","img/timg.jpg","img/timg.jpg","img/timg.jpg","img/miao.jpg","img/timg.jpg","img/timg.jpg","img/timg.jpg","img/timg.jpg"],    
+    "circleTime":"7分钟前",
+    "comment":[]
+}]

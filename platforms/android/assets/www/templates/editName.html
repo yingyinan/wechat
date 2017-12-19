@@ -1,0 +1,26 @@
+<ion-view class="myInfo">
+    <ion-nav-buttons side="left" >
+        <a class="button button-clear" ui-sref="myInfo" nav-direction="back">
+            <i class="icon ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="" class="button button-balanced" ng-click="save()">
+            保存
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        更改名字
+    </ion-nav-title>
+    <ion-content>
+        <div class="content has-header">
+            <div class="list">
+                <label class="item item-input" style="background-color:transparent;border:0px;">
+                    <input type="text" style="border-bottom:1px solid green;padding-right:0px;margin-right:16px" ng-model="user.name">
+                </label>
+            </div>
+            <p style="color:#666;padding:0px 16px;">好名字可以让你的朋友更容易记住你。</p>
+        </div>
+
+    </ion-content>
+</ion-view>

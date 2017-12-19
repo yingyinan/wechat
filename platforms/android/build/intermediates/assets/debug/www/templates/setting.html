@@ -1,0 +1,58 @@
+<ion-view class="setting">
+    <ion-nav-buttons side="left" >
+        <a class="button button-clear" ui-sref="tab.me" nav-direction="back">
+            <i class="icon ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        设置
+    </ion-nav-title>
+    <ion-content>
+            <!-- 确认退出浮动框 -->
+            <script id="exit-popover.html" type="text/ng-template">
+                <ion-popover-view class="exit">
+                <ion-content scroll="false">
+                    <ion-list>
+                    <ion-item ng-click="closePopover();showConfirm1()">退出当前账号</ion-item>
+                    <ion-item ng-click="closePopover();showConfirm2()">关闭微信</ion-item>
+                    </ion-list>
+                </ion-content>
+                </ion-popover-view>
+            </script> 
+            <!-- 确认退出当前账号对话框 -->
+            <script id="exit1.html" type="text/ng-template">
+            </script>
+            <!-- 确认关闭微信对话框 -->
+            <script id="exit2.html" type="text/ng-template">
+            </script>
+        <ion-list>
+            <div class="item item-divider"></div>
+            <ion-item ui-sref="setting-new({state:'setting'})" nav-direction="forward" nav-direction="forward">
+                新消息提醒
+            </ion-item>
+            <ion-item>
+                勿扰模式
+            </ion-item> 
+            <ion-item>
+                聊天
+            </ion-item>
+            <ion-item>
+                隐私
+            </ion-item>    
+            <ion-item>
+                通用
+            </ion-item>
+            <ion-item>
+                账号与安全
+            </ion-item>
+            <div class="item item-divider"></div>            
+            <ion-item>关于微信</ion-item>
+            <ion-item>帮助与反馈</ion-item>
+            <div class="item item-divider"></div>            
+            <ion-item>插件</ion-item>
+            <div class="item item-divider"></div>            
+            <ion-item ng-click="openPopover($event)">退出</ion-item>
+            
+        </ion-list>
+    </ion-content>
+</ion-view>

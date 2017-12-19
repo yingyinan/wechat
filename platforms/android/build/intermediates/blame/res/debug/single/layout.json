@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\multiselectorgrid.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\layout\\multiselectorgrid.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\search_book_contents_header.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\search_book_contents_header.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\search_book_contents.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\search_book_contents.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\encode.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\encode.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\capture.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\capture.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\help.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\help.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\share.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\share.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\app_picker_list_item.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\app_picker_list_item.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_discard_button.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\layout\\actionbar_discard_button.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\history_list_item.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\history_list_item.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_done_button.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\layout\\actionbar_done_button.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\bookmark_picker_list_item.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\bookmark_picker_list_item.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_custom_view_done_discard.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\res\\layout\\actionbar_custom_view_done_discard.xml"
+    },
+    {
+        "merged": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\layout\\search_book_contents_list_item.xml",
+        "source": "D:\\$tudy\\ionic\\myApp\\WeChat\\platforms\\android\\build\\intermediates\\exploded-aar\\barcodescanner\\res\\layout\\search_book_contents_list_item.xml"
+    }
+]

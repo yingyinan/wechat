@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+    <!-- app's js -->
+    <script src="js/app.js"></script>
+    <!-- 百度地图api -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8g6seQs7uUC39tHP6ZnUMczHRzaAYstG">
+      </script>
+      <script src="js/controllers.js"></script>
+      <script src="js/chats/ChatsCtrl.js"></script>
+      <script src="js/chats/ChatInfoCtrl.js"></script>
+      <script src="js/chats/ChatDetailCtrl.js"></script>
+      <script src="js/friends/FriendsCtrl.js"></script>
+      <script src="js/found/FoundCtrl.js"></script>
+      <script src="js/found/FriendCircleCtrl.js"></script>
+      <script src="js/found/CircleDetailCtrl.js"></script>
+      <script src="js/me/MeCtrl.js"></script>
+      <script src="js/me/SettingCtrl.js"></script>
+
+      <script src="js/services.js"></script>
+  </head>
+  <body ng-app="starter">
+     <!-- 浮动框 -->
+     <script id="my-popover.html" type="text/ng-template">
+      <ion-popover-view  ng-click="closePopover()" nav-direction="enter" style="width:180px;">
+        <!-- <ion-content> -->
+          <ion-list class="moreList">
+              <ion-item class="item-remove-animate item-avatar" ui-sref="">
+                  <i class="icon ion-ios-chatbubble"></i>&nbsp;&nbsp;&nbsp;&nbsp;发起群聊
+              </ion-item>
+              <ion-item class="item-remove-animate item-avatar" ui-sref="">
+                <i class="icon ion-person-add"></i>&nbsp;&nbsp;&nbsp;&nbsp;添加朋友
+              </ion-item>
+              <ion-item class="item-remove-animate item-avatar" ui-sref="barScan">
+                <i class="icon ion-qr-scanner"></i>&nbsp;&nbsp;&nbsp;&nbsp;扫一扫
+              </ion-item>
+              <ion-item class="item-remove-animate item-avatar"  ui-sref="">
+                <i class="icon ion-card"></i>&nbsp;&nbsp;&nbsp;&nbsp;收付款
+              </ion-item>
+              <ion-item class="item-remove-animate item-avatar"  ui-sref="">
+                <i class="icon ion-android-mail"></i>&nbsp;&nbsp;&nbsp;&nbsp;帮助与反馈
+              </ion-item>
+            </ion-list>
+          <!-- </ion-content> -->
+      </ion-popover-view>
+    </script>
+
+    <!-- 确认退出编辑对话框 -->
+    <script id="popup-template.html" type="text/ng-template">
+      <input ng-model="data.wifi" type="text" placeholder="Password">
+    </script>
+   
+
+    <ion-nav-bar class="bar-dark" align-title="left">
+      <!-- <ion-nav-back-button class="button-icon">
+        <i class="icon ion-android-arrow-back"></i>{{chat.name}}
+      </ion-nav-back-button>     -->
+    </ion-nav-bar>
+
+    <ion-nav-view></ion-nav-view>
+
+  </body>
+</html>

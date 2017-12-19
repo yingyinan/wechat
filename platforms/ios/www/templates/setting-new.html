@@ -1,0 +1,45 @@
+<ion-view class="setting-new">
+    <ion-nav-buttons side="left" >
+        <a class="button button-clear" ui-sref="{{state}}" nav-direction="back">
+            <i class="icon ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        新消息提醒
+    </ion-nav-title>
+    <ion-content>
+        
+            <div class="item item-divider"></div>
+            <ion-toggle ng-model="newOne.checked"
+            ng-change="newOneChange()">
+                接收新消息通知
+            </ion-toggle>
+            <ion-toggle ng-model="newTwo.checked"
+            ng-change="newTwoChange()">
+                接收语音和视频聊天邀请通知
+            </ion-toggle>
+            <ion-toggle ng-model="newThree.checked"
+            ng-change="newThreeChange()">
+                视频聊天、语音聊天铃声
+            </ion-toggle>
+            <div class="item item-divider"></div>
+            <ion-toggle ng-model="newFour.checked"
+            ng-change="newFourChange()">
+                通知显示消息详情
+            </ion-toggle>
+            <div class="item item-divider"></div>
+            <ion-toggle ng-model="newFive.checked"
+            ng-change="newFiveChange()">
+                声音
+            </ion-toggle>
+            <ion-toggle ng-model="newSix.checked"
+            ng-change="newSixChange()">
+                新消息提示音
+            </ion-toggle>
+            <ion-toggle ng-model="newSeven.checked"
+            ng-change="newSevenChange()">
+                震动
+            </ion-toggle>
+            
+    </ion-content>
+</ion-view>

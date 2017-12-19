@@ -1,0 +1,38 @@
+<ion-view class="friendInfo" hide-tabs="true">
+    <ion-nav-buttons side="left" >
+            <a class="button button-clear" ui-sref="tab.friends" nav-direction="back">
+                <i class="icon ion-android-arrow-back"></i>
+            </a>
+        </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="" class="button button-clear">
+            <i class="icon ion-android-more-vertical"></i>
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        详细资料
+    </ion-nav-title>
+
+    
+    <ion-content>
+        <ion-list>
+            <div class="item item-divider"></div>                
+            <ion-item>
+                <img src="{{chat.face}}" class="touxiang">
+                <span class="name">{{chat.name}}</span>
+                <p class="id">微信号：{{chat.id}}</p>
+            </ion-item>
+            <div class="item item-divider"></div>
+            <ion-item>
+                设置备注和标签
+            </ion-item>
+            <div class="item item-divider"></div>
+            <ion-item>地区</ion-item>            
+            <ion-item ui-sref="circle-detail({chatId:chat.id,state:'tab.friend-info'})">个人相册</ion-item>            
+            <ion-item>更多</ion-item>            
+        </ion-list>
+        <div class="btn">
+            <button class="button button-full button-balanced"  ui-sref="tab.chat-detail({chatId:'{{chat.id}}'})" nav-direction="forward">发消息</button>
+        </div>
+    </ion-content>
+</ion-view>

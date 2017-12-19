@@ -1,0 +1,27 @@
+<ion-view class="circle" on-swipe="closeInput()">
+        <ion-nav-buttons side="left" >
+            <a class="button button-clear" ui-sref="tab.found" nav-direction="back">
+                <i class="icon ion-android-arrow-back"></i>
+            </a>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <a href="" class="button button-clear">
+                <i class="icon ion-android-more-vertical"></i>                    
+            </a>
+        </ion-nav-buttons>
+        <ion-nav-title>
+            二维码/条码
+        </ion-nav-title>
+        <ion-content>
+                <button ng-click="scanBarcode()" class="button button-block button-balanced">扫一扫</button>
+                
+                <div class="card">
+                  <div class="item item-divider">扫码结果</div>
+                  <div class="item">二维码信息: {{scanResult.text}}</div>
+                  <div class="item">编码格式: {{scanResult.format}}</div>
+                  <div class="item">Cancelled: {{scanResult.cancelled}}</div>
+                </div>
+        </ion-content>
+
+    </ion-view>
+    

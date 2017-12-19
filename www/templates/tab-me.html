@@ -1,0 +1,47 @@
+<ion-view>
+  <ion-nav-title>微信</ion-nav-title>
+  <ion-nav-buttons side="right" class="button-light">
+    <a class="button button-clear search" ui-sref="search({state:'tab.me'})" nav-direction="forward">
+      <i class="icon ion-android-search"></i>
+    </a>
+    <a class="button button-clear more" ng-click="openPopover($event)">
+      <i class="icon ion-android-add"></i>
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content class="tab-me has-header">
+    <ion-list>
+      <div class="item item-divider"></div>
+      <ion-item class="myinfo" ui-sref="myInfo">
+        <img ng-src="{{userFace}}" class="touxiang">
+        <span class="name">{{userName}}</span>
+        <img ng-src={{img.erweimaImg}} class="erweima">
+        <p class="id">微信号：{{userId}}</p>
+      </ion-item>
+      <div class="item item-divider"></div>
+      <ion-item ui-sref="wallet({state:'tab.me'})" nav-direction="forward">
+        <img ng-src={{img.qianbaoImg}}>钱包
+      </ion-item>
+      <div class="item item-divider"></div>      
+      <ion-item>
+        <img ng-src={{img.shoucangImg}}>收藏
+      </ion-item> 
+      <ion-item>
+        <img ng-src={{img.xiangceImg}}>相册
+      </ion-item>
+      <ion-item>
+        <img ng-src={{img.kabaoImg}}>卡包
+      </ion-item>    
+      <ion-item>
+        <img ng-src={{img.biaoqingImg}}>表情
+      </ion-item>
+      <div class="item item-divider"></div>            
+      <ion-item ui-sref="setting({state:'tab.me'})" nav-direction="forward">
+        <img ng-src={{img.shezhiImg}}>设置
+      </ion-item>
+                                  
+    </ion-list>
+
+  </ion-content>
+</ion-view>
+

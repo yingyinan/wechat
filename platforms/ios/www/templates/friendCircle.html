@@ -1,0 +1,73 @@
+<ion-view class="circle" on-swipe="closeInput()">
+    <ion-nav-buttons side="left" >
+        <a class="button button-clear" ui-sref="{{state}}" nav-direction="back">
+            <i class="icon ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="" class="button button-clear" ng-click="modal.show()">
+            <i class="icon ion-ios-camera"></i>                    
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        朋友圈
+    </ion-nav-title>
+
+    
+    <ion-content>
+        
+
+        <ion-list>
+            <div class="header">
+                <div class="bg">
+                    <img src={{img.bgImg}} alt="">
+                </div>
+                <div class="tx">
+                    <img src="{{userFace}}" alt="">
+                </div>
+                <div class="myName"><span>{{userName}}</span></div>
+            </div>
+            <!-- <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item>
+            <ion-item class="do"></ion-item> -->
+            <div class="do"></div>
+            <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+            <ion-item class="item-remove-animate item-avatar content" ng-repeat="chat in chats">
+                <img ng-src="{{chat.face}}">
+                <h2>{{chat.name}}</h2>
+                <p>{{chat.lastText}}</p>
+                <img ng-src="{{chat.face}}" class="contentImg">
+                <p class="time">{{chat.circleTime}}</p>
+                <button class="button button-light button-clear" ng-click="com();getIndex($index)" >
+                    <i class="icon ion-android-textsms" ></i>                        
+                </button>
+                <button class="button button-light button-clear" ng-click="chat.like=!chat.like">
+                    <i class="icon ion-android-favorite-outline" ng-class="{true: 'assertive'}[chat.like]"></i>
+                </button>
+                <div class="comment">
+
+                    <div class="like" ng-show="chat.like">{{userName}}</div>
+                    <div ng-show="true" ng-repeat="comment in chat.comment">{{comment.name}}&nbsp;&nbsp;:&nbsp;&nbsp;{{comment.content}}</div>
+                </div>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+
+    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" ng-show="showKey">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="评论一下..." on-return="sendComment()" ng-model="comment.content" on-focus="inputUp()" on-blur="inputDown()" />
+        </label>
+        <button class="button button-clear" ng-click="sendComment()">
+          发送
+        </button>
+    </ion-footer-bar>
+</ion-view>

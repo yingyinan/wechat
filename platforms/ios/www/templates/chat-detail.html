@@ -1,0 +1,43 @@
+<ion-view class="chatDetail" hide-tabs="true">
+  <ion-nav-title>{{chat.name}}</ion-nav-title>
+  <ion-nav-buttons side="left" >
+      <a class="button button-clear" ui-sref="tab.chats" nav-direction="back">
+          <i class="icon ion-android-arrow-back"></i>
+      </a>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right" class="button-light">
+    <button class="tab-chats button button-clear">
+      <i class="icon ion-person"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="content-stable">
+
+    <div ng-repeat="message in messages"
+    ng-class="{other: message.userId != myId}"
+    class="messages">
+
+      <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">
+        {{message.time}}
+      </div>
+      
+      <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+        <img ng-src="{{userFace}}" alt="" width="40px" height="40px">
+        <span class="message">{{ message.text }}</span>
+      </div>
+
+    </div>
+  </ion-content>
+
+
+
+
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+    </label>
+    <button class="button button-clear" ng-click="sendMessage()">
+      Send
+    </button>
+  </ion-footer-bar>
+</ion-view>

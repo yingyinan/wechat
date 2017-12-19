@@ -1,0 +1,39 @@
+{
+  "_from": "cordova-android-play-services-gradle-release",
+  "_id": "cordova-android-play-services-gradle-release@1.1.4",
+  "_inBundle": false,
+  "_integrity": "sha1-AbA0SpIlqc6P34PmcL0yK+ynyvY=",
+  "_location": "/cordova-android-play-services-gradle-release",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-android-play-services-gradle-release",
+    "name": "cordova-android-play-services-gradle-release",
+    "escapedName": "cordova-android-play-services-gradle-release",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/cordova-android-play-services-gradle-release/download/cordova-android-play-services-gradle-release-1.1.4.tgz",
+  "_shasum": "01b0344a9225a9ce8fdf83e670bd322beca7caf6",
+  "_spec": "cordova-android-play-services-gradle-release",
+  "_where": "D:\\$tudy\\ionic\\myApp\\WeChat",
+  "author": {
+    "name": "Dave Alden"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "xml2js": "~0.4.19"
+  },
+  "deprecated": false,
+  "description": "Cordova/Phonegap plugin to align various versions of the Play Services library specified by other plugins to a specific version",
+  "devDependencies": {},
+  "license": "MIT",
+  "name": "cordova-android-play-services-gradle-release",
+  "version": "1.1.4"
+}

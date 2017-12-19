@@ -1,0 +1,28 @@
+[{
+    "id": "1001",
+    "name": "kiki",
+    "password":"123456",
+    "lastText": "起床困难户",
+    "face": "img/timg.jpg",
+    "like":"true",
+    "circleTime":"7分钟前",
+    "comment":[{"name":"应怡楠","content":"是我吗"},{"name":"梁梁","content":"那不然是谁"}]
+},{
+    "id": "1002",
+    "name": "coco",
+    "password":"123123",    
+    "lastText": "卡哇伊~",
+    "face": "img/miao.jpg",
+    "like":"true",
+    "circleTime":"7分钟前",
+    "comment":[]
+},{
+    "id": "admin",
+    "name": "admin",
+    "password":"admin",    
+    "lastText": "今天天气不错",
+    "face": "img/admin.jpg",
+    "like":"true",
+    "circleTime":"7分钟前",
+    "comment":[]
+}]
