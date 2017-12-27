@@ -47,73 +47,79 @@ www/
 ### index.html文件引入
 
 ##### 第一步：在index.html中引入app.js文件
-`
+```
     <script src="app/app.js"></script>
-`
+```
     
 ##### 第二步：在index.html中引入所有controller、service及其他js文件
-`
+```
     <script src="app/controllers.js"></script>
     <script src="app/services.js"></script>
     <script src="app/constants.js"></script>
     <script src="app/filter.js"></script>
+
     <!-- chats -->
     <script src="app/chats/ChatsCtrl.js"></script>
     <script src="app/chats/ChatsService.js"></script>
+
     <script src="app/chats/chatDetail/ChatDetailCtrl.js"></script>
     <script src="app/chats/chatDetail/ChatDetailService.js"></script>
     <script src="app/chats/chatDetail/ChatDetailFilter.js"></script>
+
     <script src="app/chats/chatInfo/ChatInfoCtrl.js"></script>
     ...
+
     <!-- found -->
     <script src="app/found/FoundCtrl.js"></script>
     <script src="app/found/friendCircle/FriendCircleCtrl.js"></script>
     <script src="app/found/circleDetail/CircleDetailCtrl.js"></script>
     ...
+
     <!-- friend -->
     <script src="app/friends/FriendsCtrl.js"></script>
     ...
+    
     <!-- me -->
     <script src="app/me/MeCtrl.js"></script>
     <script src="app/me/setting/SettingCtrl.js"></script>
     ...
 
-`
+```
 
 
 ### app.js注入
 
 ##### 第一步：各个js文件中命名模块
-####### controllers.js
+-controllers.js
 ```
     angular.module('starter.controllers',[])
     ...
 ```
-#######services.js
+-services.js
 ```
     angular.module('starter.services', [])
     .factory('Chats', function() {})
     ...
 ```
-#######filter.js
+-filter.js
 ```
     angular.module('starter.filter', [])
     .filter('friendFilter', function() {})
     ...
 ```
-#######ChatsCtrl.js
+-ChatsCtrl.js
 ```
     angular.module('starter.ChatsCtrl',[])
     .controller('ChatsCtrl',function($scope) {})
     ...
 ```
-#######ChatsService.js
+-ChatsService.js
 ```
     angular.module('starter.ChatsService', [])
     .factory('Chats', function() {})
     ...
 ```
-#######ChatDetailCtrl.js
+-ChatDetailCtrl.js
 ```
     angular.module('starter.ChatDetailCtrl',[])
     ...
