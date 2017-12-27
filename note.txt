@@ -40,6 +40,8 @@
         git commit -m ''
     4) 提交
         git push origin master
+        git push -u origin master
+
 2. 多人协作
     项目经理上传项目框架，
         git push origin master
