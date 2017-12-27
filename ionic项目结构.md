@@ -90,36 +90,36 @@ www/
 ### app.js注入
 
 ##### 第一步：各个js文件中命名模块
--controllers.js
+- controllers.js
 ```
     angular.module('starter.controllers',[])
     ...
 ```
--services.js
+- services.js
 ```
     angular.module('starter.services', [])
     .factory('Chats', function() {})
     ...
 ```
--filter.js
+- filter.js
 ```
     angular.module('starter.filter', [])
     .filter('friendFilter', function() {})
     ...
 ```
--ChatsCtrl.js
+- ChatsCtrl.js
 ```
     angular.module('starter.ChatsCtrl',[])
     .controller('ChatsCtrl',function($scope) {})
     ...
 ```
--ChatsService.js
+- ChatsService.js
 ```
     angular.module('starter.ChatsService', [])
     .factory('Chats', function() {})
     ...
 ```
--ChatDetailCtrl.js
+- ChatDetailCtrl.js
 ```
     angular.module('starter.ChatDetailCtrl',[])
     ...
