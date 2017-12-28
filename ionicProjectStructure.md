@@ -2,7 +2,7 @@
 ### 0.目录结构
 - 为了方便管理，将html和js文件放置在app文件夹中；
 - 在app文件夹中放置tabs.html、app.js、controllers.js、services.js等文件；
-- 其余文件按模块分类放置在不同的文件夹中，每个模块中都必须有对应的路由配置(.state.js)，另外可有模块的通用控制器(.controllers.js)、通用服务(.sevices.js)等。
+- 其余文件按模块分类放置在不同的文件夹中，每个模块中都必须有对应的路由配置(.state.js)，另外可有模块的通用控制器(.controllers.js)、通用服务(.sevices.js)等；
 - 每个模块中可按子页面划分，放置在不同的文件夹中，放置对应的页面(.html)、控制器(.controller.js)、服务(.services.js)等
 ```
 www/
@@ -310,7 +310,7 @@ angular.module('starter.Chats',[])...
 })();
 
 ```
-在service中，一律使用.service，不用.factory
+在service中，尽量使用.service，不用.factory
 ```
 angular.module('starter.Chats')
   .service('ChatsCtrl', ChatsCtrl);
