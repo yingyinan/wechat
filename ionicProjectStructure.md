@@ -160,17 +160,17 @@ www/
   function stateConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('tab.chat-detail', {
-        params:{
-          "chatId":null,
-          "myPosition":null,
-        },
-        url: '/chats/:chatId',
-        views: {
-          'tab-chats': {
-            templateUrl: 'app/chats/chatDetail/chatDetail.html',
-            controller: 'ChatDetailCtrl'
-          }
+      params:{
+        "chatId":null,
+        "myPosition":null,
+      },
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'app/chats/chatDetail/chatDetail.html',
+          controller: 'ChatDetailCtrl'
         }
+      }
     })
     ...
   }
@@ -294,7 +294,7 @@ www/
 其次，只有在路由配置时(.state.js)中才声明模块，需要加中括号用于注入；其余都是调用，不需要加中括号，否则代码报错。
 - chats.state.js
 ```
-      angular.module('starter.Chats',[])...
+angular.module('starter.Chats',[])...
 ```
 - tab-chats.controller.js
 ```
@@ -313,7 +313,7 @@ www/
 在service中，一律使用.service，不用.factory
 ```
 angular.module('starter.Chats')
-    .service('ChatsCtrl', ChatsCtrl);
-    ...
+  .service('ChatsCtrl', ChatsCtrl);
+  ...
 ```
 在其余的js文件中，也是一样的做法。
