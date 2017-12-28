@@ -25,9 +25,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 // 使tabs位于最底下
 .config(['$ionicConfigProvider',function($ionicConfigProvider) {
-  
+
   $ionicConfigProvider.tabs.position('bottom');// other values: top
-  
+
   }])
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'ChatsCtrl'
       }
     }
-  }) 
+  })
   .state('tab.chat-detail', {
     params:{
       "chatId":null
@@ -136,7 +136,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('setting-new', {
     params:{"state":null},
     url: '/setting/new',
-    templateUrl: 'templates/setting-new.html',
+    templateUrl: 'templates/settingNew.html',
     controller: 'NewCtrl'
   })
 

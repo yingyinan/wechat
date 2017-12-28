@@ -1,7 +1,10 @@
 # ionic项目结构
 ### 目录结构
+- 为了方便管理，将html和js文件放置在app文件夹中；
+- 在app文件夹中放置tabs.html、app.js、controllers.js、services.js等文件；
+- 其余文件按模块分类放置在不同的文件夹中，每个模块中都必须有对应的路由配置(.state.js)，另外可有模块的通用控制器(.controllers.js)、通用服务(.sevices.js)等。
+- 每个模块中可按子页面划分，放置在不同的文件夹中，放置对应的页面(.html)、控制器(.controller.js)、服务(.services.js)等
 ```
-
 www/
     index.html
     lib/ 工具类库
@@ -23,65 +26,65 @@ www/
         app.js 路由配置
         controllers.js 通用controllers
         services.js 通用services
-        constants.js
-        filter.js
-        chats/ 聊天tab页
+        directives.js 通用directives
+        constants.js 通用constants
+        filter.js 通用filters
+        auth/ 身份验证模块
+        chats/ 聊天tab页模块
+            chats.state.js
             tab-chats.html
-            ChatsCtrl.js
-            ChatsService.js
+            tab-chats.controller.js
+            tab-chats.service.js
             chatDetail/ 聊天详情
-                chatDetail.html 页面
-                ChatDetailCtrl.js 控制器
-                ChatDetailService.js 服务
-                ChatDetailFilter.js 过滤器或其他js
+                chatDetail.html 聊天详情页面
+                sendLocation.html 发送位置页面
+                chatDetail.controller.js 控制器
+                chatDetail.service.js 服务
+                chatDetail.filter.js 过滤器或其他js
             chatInfo/ 聊天信息
-        found/ 发现tab页
-        friends/ 通讯录tab页
-        me/ 我tab页
-        login/ 登录界面
-        nav/ 导航栏部分
-
+        found/ 发现tab页模块
+        friends/ 通讯录tab页模块
+        me/ 我tab页模块
+        nav/ 导航栏模块
 ```
 
 
 ### index.html文件引入
 
-##### 第一步：在index.html中引入app.js文件
+##### 第一步：在index.html中引入app.js、controllers.js、services.js、directives.js等文件
 ```
     <script src="app/app.js"></script>
-```
-    
-##### 第二步：在index.html中引入所有controller、service及其他js文件
-```
     <script src="app/controllers.js"></script>
     <script src="app/services.js"></script>
-    <script src="app/constants.js"></script>
-    <script src="app/filter.js"></script>
-
-    <!-- chats -->
-    <script src="app/chats/ChatsCtrl.js"></script>
-    <script src="app/chats/ChatsService.js"></script>
-
-    <script src="app/chats/chatDetail/ChatDetailCtrl.js"></script>
-    <script src="app/chats/chatDetail/ChatDetailService.js"></script>
-    <script src="app/chats/chatDetail/ChatDetailFilter.js"></script>
-
-    <script src="app/chats/chatInfo/ChatInfoCtrl.js"></script>
-    ...
+    <script src="app/directives.js"></script>
+```
+    
+##### 第二步：在index.html中按模块引入所有state、controller、service及其他js文件
+```
+   <!-- chats -->
+    <script src="app/chats/chats.state.js"></script>
+    <script src="app/chats/tab-chats.controller.js"></script>
+    <script src="app/chats/chatDetail/chatDetail.controller.js"></script>
+    <script src="app/chats/chatInfo/chatInfo.controller.js"></script>
 
     <!-- found -->
-    <script src="app/found/FoundCtrl.js"></script>
-    <script src="app/found/friendCircle/FriendCircleCtrl.js"></script>
-    <script src="app/found/circleDetail/CircleDetailCtrl.js"></script>
-    ...
+    <script src="app/found/found.state.js"></script>
+    <script src="app/found/tab-found.controller.js"></script>
+    <script src="app/found/friendCircle/friendCircle.controller.js"></script>
+    <script src="app/found/circleDetail/circleDetail.controller.js"></script>
 
     <!-- friend -->
-    <script src="app/friends/FriendsCtrl.js"></script>
-    ...
-    
+    <script src="app/friends/friends.state.js"></script>
+    <script src="app/friends/tab-friends.controller.js"></script>
+
     <!-- me -->
-    <script src="app/me/MeCtrl.js"></script>
-    <script src="app/me/setting/SettingCtrl.js"></script>
+    <script src="app/me/me.state.js"></script>
+    <script src="app/me/tab-me.controller.js"></script>
+    <script src="app/me/setting/setting.controller.js"></script>
+
+    <!-- nav -->
+    <script src="app/nav/nav.state.js"></script>
+    <script src="app/nav/nav.controller.js"></script>
     ...
 
 ```
@@ -89,92 +92,214 @@ www/
 
 ### app.js注入
 
-##### 第一步：各个js文件中命名模块
-- controllers.js
+##### 第一步：命名各个模块
+- 在全局通用controllers.js中，将模块命名为starter.controllers
 ```
-    angular.module('starter.controllers',[])
-    ...
-```
-- services.js
-```
-    angular.module('starter.services', [])
-    .factory('Chats', function() {})
-    ...
-```
-- filter.js
-```
-    angular.module('starter.filter', [])
-    .filter('friendFilter', function() {})
-    ...
-```
-- ChatsCtrl.js
-```
-    angular.module('starter.ChatsCtrl',[])
-    .controller('ChatsCtrl',function($scope) {})
-    ...
-```
-- ChatsService.js
-```
-    angular.module('starter.ChatsService', [])
-    .factory('Chats', function() {})
-    ...
-```
-- ChatDetailCtrl.js
-```
-    angular.module('starter.ChatDetailCtrl',[])
-    ...
+(function () {
+  'use strict';
+
+  angular
+    .module('starter.controllers',[])
+    .controller('LoginCtrl', LoginCtrl);
+  LoginCtrl.$inject = ['$ionicPopup','$scope','$rootScope','$state','User','$timeout'];
+
+  function LoginCtrl($ionicPopup,$scope,$rootScope,$state,User,$timeout) {...}
+
+  }
+})();
 ```
 
-##### 第二步：app.js中注入模块
+- 在全局通用services.js中，将模块命名为starter.services
 ```
-    angular.module('starter', [
-        'ionic',
-        'ngCordova',
-        'starter.controllers',
-        'starter.services',
-        'starter.filter',
-        'starter.ChatsCtrl',
-        'starter.ChatsService',
-        'starter.ChatDetailCtrl',
-        'starter.ChatInfoCtrl',
-        'starter.FriendsCtrl',
-        'starter.FoundCtrl',
-        'starter.FriendCircleCtrl',
-        'starter.CircleDetailCtrl',
-        'starter.MeCtrl',
-        'starter.SettingCtrl',
-        ...
+(function () {
+  'use strict';
+
+  angular
+    .module('starter.services', [])
+    .service('Chats', Chats)
+    .service('Refresh',Refresh)
+    .service('User',User);
+  Chats.$inject = [];
+  Refresh.$inject = ['$http','$q'];
+  User.$inject = ['$http','$q'];
+
+  function Chats() {...}
+  function Refresh($http,$q) {...}
+  function User($http,$q) {...}
+})();
+```
+
+依次类推，全局通用filters、directives等都写成这样的形式。
+
+在每个被分类的模块中，在.state.js中声明模块，以chats.state.js模块为例,将模块声明为starter.Chats。
+并且在stateConfig函数中配置子路由。
+命名规则：模块名 + .state.js
+> 特别注意的是，config不需要指定名字，不写成.config('stateConfig',stateConfig)，而写成.config(stateConfig).
+
+- chats.state.js
+```
+(function() {
+  'use strict';
+
+  angular
+    .module('starter.Chats',[])
+    .config(stateConfig);
+
+  stateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+  function stateConfig($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    .state('tab.chat-detail', {
+        params:{
+          "chatId":null,
+          "myPosition":null,
+        },
+        url: '/chats/:chatId',
+        views: {
+          'tab-chats': {
+            templateUrl: 'app/chats/chatDetail/chatDetail.html',
+            controller: 'ChatDetailCtrl'
+          }
+        }
+    })
+    ...
+  }
+})();
+```
+##### 第二步：app.js中注入模块
+将第一步中声明好的模块注入到app.js中。
+并且在stateConfig函数中配置路由，只配置根及各个tab页的状态机，其余在各个模块的.state.js中配置
+- app.js
+(function() {
+  'use strict';
+
+  angular
+    .module('starter',[
+      'ionic',
+      'ngCordova',
+      'starter.controllers',
+      'starter.services',
+      'starter.directives',
+      'starter.Chats',
+      'starter.Friends',
+      'starter.Found',
+      'starter.Me',
+      'starter.Nav'
     ])
 
-```
+    .run(stateRun)
+    .config(tabConfig)
+    .config(stateConfig);
 
+  stateRun.$inject = ['$ionicPlatform','$location','$rootScope','$ionicHistory','$cordovaToast']
+  tabConfig.$inject = ['$ionicConfigProvider'];
+  stateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-### app.js中配置状态机
+  function stateRun($ionicPlatform,$location,$rootScope,$ionicHistory,$cordovaToast){...}
 
-```
-// 聊天列表
-.state('tab.chats', {
-    url: '/chats',
-    views: {
-        'tab-chats': {
+  function tabConfig($ionicConfigProvider) {...}
+
+  function stateConfig($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    // 根
+      .state('tab', {
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'app/tabs.html'
+      })
+      // 聊天列表
+      .state('tab.chats', {
+        url: '/chats',
+        views: {
+          'tab-chats': {
             templateUrl: 'app/chats/tab-chats.html',
             controller: 'ChatsCtrl'
+          }
         }
-    }
-})
-// 聊天详情
-.state('chatDetail', {
-    params:{
-        "chatId":null,
-        "myPosition":null,   
-    },
-    url: '/chats/:chatId',
-    views: {
-        'tab-chats': {
-            templateUrl: 'app/chats/chatDetail.html',
-            controller: 'ChatDetailCtrl'
+      })
+      // 通讯录 界面
+      .state('tab.friends', {
+        url: '/friends',
+        // cache: true,
+        views: {
+          'tab-friends': {
+            templateUrl: 'app/friends/tab-friends.html',
+            controller: 'FriendsCtrl'
+          }
         }
-    }
-})
+      })
+      // 发现 界面
+      .state('tab.found', {
+        params:{
+          "state":null
+        },
+        url: '/found',
+        views: {
+          'tab-found': {
+            templateUrl: 'app/found/tab-found.html',
+            controller: 'FoundCtrl'
+          }
+        }
+      })
+      // 我 界面
+      .state('tab.me', {
+        url: '/me',
+        views: {
+          'tab-me': {
+            templateUrl: 'app/me/tab-me.html',
+            controller: 'MeCtrl'
+          }
+        }
+      })
+      // 登录界面
+      .state('login', {
+        params:{"state":null},
+        url: '/login',
+        templateUrl: 'app/auth/login.html',
+        controller: 'LoginCtrl'
+      });
 
+    $urlRouterProvider.otherwise('/tab/chats);
+  }
+
+})();
+
+### 各个模块中控制器、服务等js的书写
+首先，所有的js文件命名应继承html的名字，例如:
+    tab-chats.html
+    tab-chats.controller.js
+    tab-chats.service.js
+
+    chatDetail.html
+    chatDetail.controller.js
+    chatDetail.service.js
+    命名规则：
+            html名 + .controller.js
+            html名 + .service.js
+            html名 + .directive.js
+            ...
+其次，只有在路由配置时(.state.js)中才声明模块，需要加中括号用于注入；其余都是调用，不需要加中括号
+- chats.state.js
+```
+      angular.module('starter.Chats',[])...
+```
+- tab-chats.controller.js
+```
+(function () {
+  'use strict';
+
+  angular
+    .module('starter.Chats')
+    .controller('ChatsCtrl', ChatsCtrl);
+  ChatsCtrl.$inject = ['$scope','Chats','$ionicPopover'];
+
+  function ChatsCtrl($scope,Chats,$ionicPopover) {...}
+})();
+
+```
+在service中，一律使用.service，不用.factory
+```
+angular.module('starter.Chats')
+    .service('ChatsCtrl', ChatsCtrl);
+    ...
 ```

@@ -22,7 +22,7 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
     }
   });
 
-  
+
   $ionicPlatform.registerBackButtonAction(function (e) {
       //判断处于哪个页面时双击退出
       if ($location.path() == '/login' || $location.path() == '/tab/main' ) {
@@ -62,9 +62,9 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
 
 // 使tabs位于最底下
 .config(['$ionicConfigProvider',function($ionicConfigProvider) {
-  
+
   $ionicConfigProvider.tabs.position('bottom');// other values: top
-  
+
   }])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -93,12 +93,12 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
         controller: 'ChatsCtrl'
       }
     }
-  }) 
+  })
   // 聊天框
   .state('tab.chat-detail', {
     params:{
       "chatId":null,
-      "myPosition":null,   
+      "myPosition":null,
     },
     url: '/chats/:chatId',
     views: {
@@ -235,7 +235,7 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
   .state('erweima', {
     params:{"state":null},
     url: '/myInfo/erweima',
-    templateUrl: 'templates/erweima.html',
+    templateUrl: 'templates/qrCode.html',
     controller: 'ErweimaCtrl'
   })
   // 我的钱包
@@ -256,7 +256,7 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
   .state('setting-new', {
     params:{"state":null},
     url: '/setting/new',
-    templateUrl: 'templates/setting-new.html',
+    templateUrl: 'templates/settingNew.html',
     controller: 'NewCtrl'
   })
 
