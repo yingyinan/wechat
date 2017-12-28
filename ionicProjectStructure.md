@@ -49,6 +49,8 @@ www/
 ```
 
 
+
+
 ### 1.index.html文件引入
 
 ##### 第一步：在index.html中引入app.js、controllers.js、services.js、directives.js等文件
@@ -90,6 +92,8 @@ www/
 ```
 
 
+
+
 ### 2.app.js模块注入
 
 ##### 第一步：命名各个模块
@@ -100,11 +104,11 @@ www/
 
   angular
     .module('starter.controllers',[])
-    .controller('LoginCtrl', LoginCtrl);
+    .controller('ShowAnimation', ShowAnimation);
 
-  LoginCtrl.$inject = ['$ionicPopup','$scope','$rootScope','$state','User','$timeout'];
+  ShowAnimation.$inject = ['$ionicPopup','$scope','$rootScope','$state','User','$timeout'];
 
-  function LoginCtrl($ionicPopup,$scope,$rootScope,$state,User,$timeout) {...}
+  function ShowAnimation($ionicPopup,$scope,$rootScope,$state,User,$timeout) {...}
 })();
 ```
 
@@ -131,6 +135,8 @@ www/
 
 以此类推，全局通用filters、directives等都写成这样的形式。
 
+- chats.state.js
+
 在每个被分类的模块中，在.state.js中声明模块，以chats.state.js模块为例，将模块声明为starter.Chats。
 
 并且在stateConfig函数中配置子路由。
@@ -141,8 +147,6 @@ www/
 ```
 
 > 特别注意的是，config不需要指定名字，不写成.config('stateConfig',stateConfig)，而写成.config(stateConfig).
-
-- chats.state.js
 ```
 (function() {
   'use strict';
@@ -212,67 +216,73 @@ www/
     $stateProvider
     // 根
     .state('tab', {
-        url: '/tab',
-        abstract: true,
-        templateUrl: 'app/tabs.html'
-      })
-      // 聊天列表
-      .state('tab.chats', {
-        url: '/chats',
-        views: {
-          'tab-chats': {
-            templateUrl: 'app/chats/tab-chats.html',
-            controller: 'ChatsCtrl'
-          }
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'app/tabs.html'
+    })
+    // 聊天列表
+    .state('tab.chats', {
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'app/chats/tab-chats.html',
+          controller: 'ChatsCtrl'
         }
-      })
-      // 通讯录 界面
-      .state('tab.friends', {
-        url: '/friends',
-        views: {
-          'tab-friends': {
-            templateUrl: 'app/friends/tab-friends.html',
-            controller: 'FriendsCtrl'
-          }
+      }
+    })
+    // 通讯录 界面
+    .state('tab.friends', {
+      url: '/friends',
+      views: {
+        'tab-friends': {
+          templateUrl: 'app/friends/tab-friends.html',
+          controller: 'FriendsCtrl'
         }
-      })
-      // 发现 界面
-      .state('tab.found', {
-        params:{
-          "state":null
-        },
-        url: '/found',
-        views: {
-          'tab-found': {
-            templateUrl: 'app/found/tab-found.html',
-            controller: 'FoundCtrl'
-          }
+      }
+    })
+    // 发现 界面
+    .state('tab.found', {
+      params:{
+        "state":null
+      },
+      url: '/found',
+      views: {
+        'tab-found': {
+          templateUrl: 'app/found/tab-found.html',
+          controller: 'FoundCtrl'
         }
-      })
-      // 我 界面
-      .state('tab.me', {
-        url: '/me',
-        views: {
-          'tab-me': {
-            templateUrl: 'app/me/tab-me.html',
-            controller: 'MeCtrl'
-          }
+      }
+    })
+    // 我 界面
+    .state('tab.me', {
+      url: '/me',
+      views: {
+        'tab-me': {
+          templateUrl: 'app/me/tab-me.html',
+          controller: 'MeCtrl'
         }
-      })
+      }
+    })
     $urlRouterProvider.otherwise('/tab/chats);
   }
 })();
 ```
+
+
+
 
 ### 3.各个模块中控制器、服务等js的书写
 首先，除.state.js外，所有的js文件命名应继承html的名字，例如:
 -   tab-chats.html
 -   tab-chats.controller.js
 -   tab-chats.service.js
+
 又例如：
+
 -   chatDetail.html
 -   chatDetail.controller.js
 -   chatDetail.service.js
+
 
 控制器、服务等js的命名规则：
 ```
