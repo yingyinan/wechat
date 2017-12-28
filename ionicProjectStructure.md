@@ -1,5 +1,5 @@
 # ionic项目结构
-### 目录结构
+### 0.目录结构
 - 为了方便管理，将html和js文件放置在app文件夹中；
 - 在app文件夹中放置tabs.html、app.js、controllers.js、services.js等文件；
 - 其余文件按模块分类放置在不同的文件夹中，每个模块中都必须有对应的路由配置(.state.js)，另外可有模块的通用控制器(.controllers.js)、通用服务(.sevices.js)等。
@@ -49,7 +49,7 @@ www/
 ```
 
 
-### index.html文件引入
+### 1.index.html文件引入
 
 ##### 第一步：在index.html中引入app.js、controllers.js、services.js、directives.js等文件
 ```
@@ -90,7 +90,7 @@ www/
 ```
 
 
-### app.js注入
+### 2.app.js模块注入
 
 ##### 第一步：命名各个模块
 - 在全局通用controllers.js中，将模块命名为starter.controllers
@@ -101,11 +101,10 @@ www/
   angular
     .module('starter.controllers',[])
     .controller('LoginCtrl', LoginCtrl);
+
   LoginCtrl.$inject = ['$ionicPopup','$scope','$rootScope','$state','User','$timeout'];
 
   function LoginCtrl($ionicPopup,$scope,$rootScope,$state,User,$timeout) {...}
-
-  }
 })();
 ```
 
@@ -119,6 +118,7 @@ www/
     .service('Chats', Chats)
     .service('Refresh',Refresh)
     .service('User',User);
+    
   Chats.$inject = [];
   Refresh.$inject = ['$http','$q'];
   User.$inject = ['$http','$q'];
@@ -131,9 +131,15 @@ www/
 
 依次类推，全局通用filters、directives等都写成这样的形式。
 
-在每个被分类的模块中，在.state.js中声明模块，以chats.state.js模块为例,将模块声明为starter.Chats。
+在每个被分类的模块中，在.state.js中声明模块，以chats.state.js模块为例，将模块声明为starter.Chats。
+
 并且在stateConfig函数中配置子路由。
-命名规则：模块名 + .state.js
+
+- 模块命名规则：
+```
+    模块名 + .state.js
+```
+
 > 特别注意的是，config不需要指定名字，不写成.config('stateConfig',stateConfig)，而写成.config(stateConfig).
 
 - chats.state.js
@@ -168,8 +174,11 @@ www/
 ```
 ##### 第二步：app.js中注入模块
 将第一步中声明好的模块注入到app.js中。
-并且在stateConfig函数中配置路由，只配置根及各个tab页的状态机，其余在各个模块的.state.js中配置
+
+并且在stateConfig函数中配置路由，只配置根路由及各个tab页的路由，其余在各个模块的.state.js中配置
+
 - app.js
+```
 (function() {
   'use strict';
 
@@ -220,7 +229,6 @@ www/
       // 通讯录 界面
       .state('tab.friends', {
         url: '/friends',
-        // cache: true,
         views: {
           'tab-friends': {
             templateUrl: 'app/friends/tab-friends.html',
@@ -261,23 +269,26 @@ www/
 
     $urlRouterProvider.otherwise('/tab/chats);
   }
-
 })();
+```
 
-### 各个模块中控制器、服务等js的书写
-首先，所有的js文件命名应继承html的名字，例如:
-    tab-chats.html
-    tab-chats.controller.js
-    tab-chats.service.js
+### 3.各个模块中控制器、服务等js的书写
+首先，除.state.js外，所有的js文件命名应继承html的名字，例如:
+-   tab-chats.html
+-   tab-chats.controller.js
+-   tab-chats.service.js
 
-    chatDetail.html
-    chatDetail.controller.js
-    chatDetail.service.js
-    命名规则：
-            html名 + .controller.js
-            html名 + .service.js
-            html名 + .directive.js
-            ...
+-   chatDetail.html
+-   chatDetail.controller.js
+-   chatDetail.service.js
+
+- 控制器、服务等js的命名规则：
+```
+    html名 + .controller.js
+    html名 + .service.js
+    html名 + .directive.js
+    ...
+```
 其次，只有在路由配置时(.state.js)中才声明模块，需要加中括号用于注入；其余都是调用，不需要加中括号
 - chats.state.js
 ```
