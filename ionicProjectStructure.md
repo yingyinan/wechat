@@ -129,13 +129,13 @@ www/
 })();
 ```
 
-依次类推，全局通用filters、directives等都写成这样的形式。
+以此类推，全局通用filters、directives等都写成这样的形式。
 
 在每个被分类的模块中，在.state.js中声明模块，以chats.state.js模块为例，将模块声明为starter.Chats。
 
 并且在stateConfig函数中配置子路由。
 
-- 模块命名规则：
+模块命名规则：
 ```
     模块名 + .state.js
 ```
@@ -211,7 +211,7 @@ www/
   function stateConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
     // 根
-      .state('tab', {
+    .state('tab', {
         url: '/tab',
         abstract: true,
         templateUrl: 'app/tabs.html'
@@ -259,14 +259,6 @@ www/
           }
         }
       })
-      // 登录界面
-      .state('login', {
-        params:{"state":null},
-        url: '/login',
-        templateUrl: 'app/auth/login.html',
-        controller: 'LoginCtrl'
-      });
-
     $urlRouterProvider.otherwise('/tab/chats);
   }
 })();
@@ -277,19 +269,19 @@ www/
 -   tab-chats.html
 -   tab-chats.controller.js
 -   tab-chats.service.js
-
+又例如：
 -   chatDetail.html
 -   chatDetail.controller.js
 -   chatDetail.service.js
 
-- 控制器、服务等js的命名规则：
+控制器、服务等js的命名规则：
 ```
     html名 + .controller.js
     html名 + .service.js
     html名 + .directive.js
     ...
 ```
-其次，只有在路由配置时(.state.js)中才声明模块，需要加中括号用于注入；其余都是调用，不需要加中括号
+其次，只有在路由配置时(.state.js)中才声明模块，需要加中括号用于注入；其余都是调用，不需要加中括号，否则代码报错。
 - chats.state.js
 ```
       angular.module('starter.Chats',[])...
@@ -314,3 +306,4 @@ angular.module('starter.Chats')
     .service('ChatsCtrl', ChatsCtrl);
     ...
 ```
+在其余的js文件中，也是一样的做法。
