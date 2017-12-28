@@ -133,15 +133,15 @@ www/
 })();
 ```
 
-以此类推，全局通用filters、directives等都写成这样的形式。
+    以此类推，全局通用filters、directives等都写成这样的形式。
 
 - chats.state.js
 
-在每个被分类的模块中，在.state.js中声明模块，以chats.state.js模块为例，将模块声明为starter.Chats。
+    在每个被分类的模块中，在.state.js中声明模块，以chats.state.js模块为例，将模块声明为starter.Chats。
 
-并且在stateConfig函数中配置子路由。
+    并且在stateConfig函数中配置子路由。
 
-模块命名规则：
+    模块命名规则：
 ```
     模块名 + .state.js
 ```
